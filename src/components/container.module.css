@@ -1,0 +1,63 @@
+.containerStyle {
+    display: flex;
+    /* flex-flow: row wrap; */
+    padding: 0;
+    margin: 0;
+    /* flex: 1 100%; */
+    /* justify-content: flex-end; */
+   
+}
+
+/* .containerStyle > * {
+  flex: 1 100%;
+} */
+
+.containerStyle > .sidebarStyle{
+ 
+    position: relative;
+    height: 300px;
+    /* width: 25% */
+    /* margin: 10px; */
+    flex: 0 1 45%;
+}
+
+.sidebarStyle > .innerDiv{
+  /* flex-grow: 3; */
+  position: fixed;
+  padding: 25px;
+}
+
+.containerStyle > .mainContentStyle{
+  flex: 0 1 100%;
+  /* margin: 10px; */
+}
+
+@media all and (min-width: 600px) {
+
+  .innerDiv{
+    border-right-style: solid;
+    border-width: 2px;
+    border-color: purple;
+  }
+}
+
+
+@media all and (max-width: 600px) {
+    .containerStyle {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+
+    .sidebarStyle{
+      position: relative;
+
+    }
+    .innerDiv{
+      position: relative;
+      border-color: purple;
+      border-bottom-style: solid;
+      border-width: 2px;
+
+    }
+  }
+
