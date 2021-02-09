@@ -1,5 +1,5 @@
 import React from "react"
-import arrow from "../img/down-arrow-grey.png" // Tell webpack this JS file uses this image
+import arrow from "../imgs/down-arrow-grey.png" // Tell webpack this JS file uses this image
 
 export default function NextArrow(){
     return(
