@@ -9,7 +9,7 @@ order: 1
 <br>
 
 ### things i like
-- eating pizza without many sichuan peppers 
+- eating pizza with hardly any sichuan peppers 
 - thinking about eating chocolate and trying to not eat too much it  
 - running to catch a spinning plastic disc
 
