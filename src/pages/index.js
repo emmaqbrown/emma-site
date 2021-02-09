@@ -22,7 +22,7 @@ export default function Home({data}) {
             return (
               <SlideUpBlurb>
             <Img fluid={edge.node.childImageSharp.fluid} />
-            {edge.next ? <NextArrow/> : <div style={{marginBottom: '9rem'}}></div>}
+            {edge.next ? <NextArrow/> : <div style={{marginBottom: '20rem'}}></div>}
             </SlideUpBlurb>
             )
           })}

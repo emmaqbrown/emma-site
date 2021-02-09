@@ -7,18 +7,18 @@
 .sidebarStyle{
   flex: 2;
   height: 300px;
-  /* flex-basis: 75%; */
 }
 
 .innerDiv{
   position: fixed;
   padding-top: 25px;
-  padding: 0 75px;
+  padding: 0 100px;
 }
 
 .mainContentStyle{
   flex: 3;
   padding: 0 3rem ;
+  flex-shrink: 0;
 
 }
 
@@ -30,7 +30,7 @@
   text-align: center;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 100px) {
 
   .innerDiv{
     border-right-style: solid;
@@ -39,20 +39,14 @@
   }
 }
 
-@media all and (max-width: 1200px) {
-  .sidebarStyle{
-    flex: 1;
-    flex-basis: 25%;
-  }
+@media all and (max-width: 1250px) {
   .mainContentStyle{
     flex: 2;
-  
-  }
 
+  }
 }
 
-
-@media all and (max-width: 950px) {
+@media all and (max-width: 1000px) {
   .containerStyle {
     /* On small screens, we are no longer using row direction but column */
     flex-direction: column;
