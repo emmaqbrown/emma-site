@@ -5,7 +5,7 @@ order: 2
 ---
 
 
-living in Hong Kong teaching computer science at a secondary school
+i teach computer science at a secondary school in Hong Kong
 
 <br>
 
