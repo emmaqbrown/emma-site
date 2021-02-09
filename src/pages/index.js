@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SidebarFlex from "../components/sidebarFlex"
 import MainContent from "../components/mainContent"
 import SlideUpBlurb from "../components/text"
+import NextArrow from "../components/nextArrow"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -17,10 +18,14 @@ export default function Home({data}) {
 
         <MainContent>
        
-            <SlideUpBlurb>
-                <Img fluid={data.fileName.childImageSharp.fluid} alt="" />
-
+            {data.allFile.edges.map(edge => {
+            return (
+              <SlideUpBlurb>
+            <Img fluid={edge.node.childImageSharp.fluid} />
+            {edge.next ? <NextArrow/> : <div style={{marginBottom: '9rem'}}></div>}
             </SlideUpBlurb>
+            )
+          })}
         
         </MainContent>
         
@@ -32,11 +37,19 @@ export default function Home({data}) {
 
 
 export const query = graphql`
-  query {
-    fileName: file(relativePath: { eq: "img/3822-15.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+  {
+    allFile(filter: {relativeDirectory: {eq: "img"}, extension: {eq: "jpg"}}, sort: {fields: ctime, order: DESC}) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        next {
+          absolutePath
         }
       }
     }

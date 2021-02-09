@@ -26,6 +26,7 @@
   position: fixed;
   padding-right: 50px;
   padding-top: 25px;
+  margin-left: 75px;
 }
 
 .containerStyle > .mainContentStyle{
@@ -35,8 +36,10 @@
 
 .slideUpBlurb {
   margin: auto; 
-  width: 75%; 
+  width: 80%; 
   margin-bottom: 20px;
+  display: block;
+  text-align: center;
 }
 
 @media all and (min-width: 600px) {
@@ -64,6 +67,9 @@
     border-color: purple;
     border-bottom-style: solid;
     border-width: 2px;
+    margin-bottom: 2rem;
+    margin-left: 0px;
+
   }
 
   .containerStyle > .mainContentStyle{

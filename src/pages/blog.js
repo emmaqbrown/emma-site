@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SidebarFlex from "../components/sidebarFlex"
 import MainContent from "../components/mainContent"
 import SlideUpBlurb from "../components/text"
+import NextArrow from "../components/nextArrow"
 import { graphql } from "gatsby"
 
 export default function Test({data}) {
@@ -14,12 +15,13 @@ export default function Test({data}) {
 
         <MainContent>
         {data.allMarkdownRemark.edges.map(
-          ({ node }) => (
-          <SlideUpBlurb  key={node.id}>
-              <h4>{node.frontmatter.title}</h4>
-              <div dangerouslySetInnerHTML={{ __html: node.html }}/>
-              <p style={{opacity: 0.3}}>{node.frontmatter.date}</p>
-          
+          edge => (
+          <SlideUpBlurb  key={edge.node.id}>
+              <h3  style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h3>
+              <div  style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: edge.node.html }}/>
+              <p  style={{opacity: 0.3, textAlign: 'left'}}>{edge.node.frontmatter.date}</p>
+              {edge.next ? <NextArrow/> : <div style={{marginBottom: '12rem'}}></div>}
+
         </SlideUpBlurb>
           ))}
         </MainContent>
@@ -41,7 +43,11 @@ export const query = graphql`
           }
           html
         }
+        next {
+          id
+        }
       }
+      
     }
   }
 `

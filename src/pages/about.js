@@ -16,10 +16,10 @@ export default function About({data}) {
 
         <MainContent>
         {data.allMarkdownRemark.edges.map(
-            ({ node }) => (
-            <SlideUpBlurb  key={node.id}>
-                <h4>{node.frontmatter.title}</h4>
-                <p>{node.rawMarkdownBody}</p>
+            edge => (
+            <SlideUpBlurb  key={edge.node.id}>
+                <h3 style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h3>
+                <div  style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: edge.node.html }}/>
             </SlideUpBlurb>
           ))} 
         </MainContent>
@@ -38,7 +38,7 @@ export const query = graphql`
           frontmatter {
             title
           }
-          rawMarkdownBody
+          html
         }
       }
     }

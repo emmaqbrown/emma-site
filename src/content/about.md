@@ -3,7 +3,15 @@ title: "About"
 tag: "about" 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra risus sit amet ipsum convallis ullamcorper. Donec pellentesque leo et neque porta blandit. Suspendisse eleifend tortor a ante porta accumsan. 
+Currently living in Hong Kong teaching computer science at a secondary school. 
 
-Aliquam quis est massa. Mauris tristique nunc ut nibh vestibulum sodales. Donec faucibus a turpis et condimentum.
+
+eqbrown95@gmail.com
+
+<br>
+
+### Things I Like
+    - Eating pizza with not too many sichuan peppers 
+    - Thinking about eating chocolate and trying to not eat too much it  
+    - Watching movies in language I don't know about something I know nothing about 
 

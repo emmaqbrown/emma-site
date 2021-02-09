@@ -7,7 +7,8 @@
 module.exports = {
   siteMetadata: {
     title: `Emma Q. Brown`,
-    description: `Just a lady.`
+    description: `Just a person living in a new place.`,
+    siteUrl: `http://www.emmaqbrown.com`,
   },
   plugins: [
     {
