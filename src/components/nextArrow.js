@@ -4,7 +4,7 @@ import arrow from "../imgs/down-arrow-grey.png" // Tell webpack this JS file use
 export default function NextArrow(){
     return(
         <img src={arrow} alt="Logo" style={{width:'3%', marginTop: '2rem',
-        marginBottom: '3rem',opacity:'.3'}}/>
+        marginBottom: '10rem',opacity:'.3'}}/>
     )
 }
 

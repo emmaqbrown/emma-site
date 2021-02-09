@@ -9,7 +9,7 @@ const linkStyle = {
 }
 
 const activeStyle = {
-  color: 'purple', 
+  color: '#3c9e6f', 
   textDecoration: 'none'
 }
 

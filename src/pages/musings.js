@@ -17,8 +17,8 @@ export default function Musings({data}) {
         {data.allMarkdownRemark.edges.map(
           edge => (
           <SlideUpBlurb  key={edge.node.id}>
-              <h3  style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h3>
-              <div  style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: edge.node.html }}/>
+              <h2 style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h2>
+              <div  style={{textAlign: 'left', color:'#707070'}} dangerouslySetInnerHTML={{ __html: edge.node.html }}/>
               <p  style={{opacity: 0.3, textAlign: 'left'}}>{edge.node.frontmatter.date}</p>
               {edge.next ? <NextArrow/> : <div style={{marginBottom: '12rem'}}></div>}
 

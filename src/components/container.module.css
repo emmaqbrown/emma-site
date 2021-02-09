@@ -35,7 +35,7 @@
   .innerDiv{
     border-right-style: solid;
     border-width: 2px;
-    border-color: purple;
+    border-color: #367858;
   }
 }
 
@@ -63,7 +63,6 @@
     position: static;
     border-right-style: none;
 
-    border-color: purple;
     border-bottom-style: solid;
     border-width: 2px;
     margin-bottom: 2rem;

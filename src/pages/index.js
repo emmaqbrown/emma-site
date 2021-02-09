@@ -21,7 +21,7 @@ export default function Home({data}) {
             {data.allFile.edges.map(edge => {
             return (
               <SlideUpBlurb>
-            <Img fluid={edge.node.childImageSharp.fluid} />
+            <Img fluid={edge.node.childImageSharp.fluid} style={{alignItem:'center'}}/>
             {edge.next ? <NextArrow/> : <div style={{marginBottom: '20rem'}}></div>}
             </SlideUpBlurb>
             )
@@ -43,8 +43,10 @@ export const query = graphql`
         node {
           id
           childImageSharp {
-            fluid {
+            fluid(maxHeight: 700, quality: 100) {
               ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+
             }
           }
         }

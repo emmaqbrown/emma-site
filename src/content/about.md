@@ -1,18 +1,26 @@
 ---
-title: "About"
+title: "a little about me"
 tag: "about" 
+order: 1
 ---
 
-Currently living in Hong Kong teaching computer science at a secondary school. 
+25. female. wants to be better at foaming milk. 
 
 <br>
 
-### Things I Like
-- Eating pizza with not too many sichuan peppers 
-- Thinking about eating chocolate and trying to not eat too much it  
-- Watching movies in language I don't know about something I know nothing about 
+### things i like
+- eating pizza without many sichuan peppers 
+- thinking about eating chocolate and trying to not eat too much it  
+- running to catch a spinning plastic disc
+
+<br>
+
+### things i've been into recently 
+- "we are who we are" on hbo
+- running to acai bowls 
+- a green corduroy jacket 
+
+<br>
 
 
-<br><br>
 
-<span style="opacity: .5">email: eqbrown95@gmail.com </span>
