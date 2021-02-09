@@ -1,5 +1,5 @@
 ---
-title: "a little about me"
+title: "[a little] about me"
 tag: "about" 
 order: 1
 ---

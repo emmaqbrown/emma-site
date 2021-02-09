@@ -1,5 +1,5 @@
 ---
-title: "a little work"
+title: "[a little] work"
 tag: "about" 
 order: 2
 ---
