@@ -59,7 +59,7 @@ module.exports = {
         name: `Emma Q Brown`,
         short_name: `Emma`,
         start_url: `/`,
-        icon: `src/img/down-arrow-grey.png`,
+        icon: `src/imgs/down-arrow-grey.png`,
       },
     },
     `gatsby-transformer-sharp`, 
