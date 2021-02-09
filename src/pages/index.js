@@ -38,7 +38,7 @@ export default function Home({data}) {
 
 export const query = graphql`
   {
-    allFile(filter: {relativeDirectory: {eq: "img"}, extension: {eq: "jpg"}}, sort: {fields: ctime, order: DESC}) {
+    allFile(filter: {relativeDirectory: {eq: "imgs"}, extension: {eq: "jpg"}}, sort: {fields: ctime, order: DESC}) {
       edges {
         node {
           id

@@ -7,7 +7,7 @@ import SlideUpBlurb from "../components/text"
 import NextArrow from "../components/nextArrow"
 import { graphql } from "gatsby"
 
-export default function Test({data}) {
+export default function Musings({data}) {
   return (
     <Layout>
       <FlexContainer>
@@ -20,7 +20,7 @@ export default function Test({data}) {
               <h3  style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h3>
               <div  style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: edge.node.html }}/>
               <p  style={{opacity: 0.3, textAlign: 'left'}}>{edge.node.frontmatter.date}</p>
-              {edge.next ? <NextArrow/> : <div style={{marginBottom: '6rem'}}></div>}
+              {edge.next ? <NextArrow/> : <div style={{marginBottom: '12rem'}}></div>}
 
         </SlideUpBlurb>
           ))}

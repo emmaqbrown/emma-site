@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: `Emma Q. Brown`,
     description: `Just a person living in a new place.`,
-    siteUrl: `http://www.emmaqbrown.com`,
+    siteUrl: `https://www.emmaqbrown.com`,
   },
   plugins: [
     {
@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
-          threshold: .4, // Percentage of an element's area that needs to be visible to launch animation
+          threshold: .3, // Percentage of an element's area that needs to be visible to launch animation
           once: false, // Defines if animation needs to be launched once
           disable: false, // Flag for disabling animations
           
@@ -53,8 +53,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Emma Q Brown`,
+        short_name: `Emma`,
+        start_url: `/`,
+        icon: `src/img/down-arrow-grey.png`,
+      },
+    },
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
 
   ]
 }

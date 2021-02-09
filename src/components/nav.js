@@ -43,7 +43,7 @@ export default function Nav() {
         <ul style={{ listStyle: `none`, float: `left` }}>
           <ListLink to="/">Home</ListLink>
           <ListLink to="/about/">About</ListLink>
-          <ListLink to="/blog/">Blog</ListLink>
+          <ListLink to="/musings/">Musings</ListLink>
         </ul>
     </div>
   )

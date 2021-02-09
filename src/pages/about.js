@@ -18,7 +18,7 @@ export default function About({data}) {
         {data.allMarkdownRemark.edges.map(
             edge => (
             <SlideUpBlurb  key={edge.node.id}>
-                <h3 style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h3>
+                <h2 style={{textAlign: 'left'}}>{edge.node.frontmatter.title}</h2>
                 <div  style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: edge.node.html }}/>
             </SlideUpBlurb>
           ))} 
