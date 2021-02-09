@@ -5,6 +5,7 @@ import SidebarFlex from "../components/sidebarFlex"
 import MainContent from "../components/mainContent"
 import SlideUpBlurb from "../components/text"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 
 export default function Home({data}) {
@@ -15,13 +16,12 @@ export default function Home({data}) {
         <SidebarFlex />
 
         <MainContent>
-        {data.allMarkdownRemark.edges.map(
-            ({ node }) => (
-            <SlideUpBlurb  key={node.id}>
-                <h4>{node.frontmatter.title}</h4>
-                <p>{node.rawMarkdownBody}</p>
+       
+            <SlideUpBlurb>
+                <Img fluid={data.fileName.childImageSharp.fluid} alt="" />
+
             </SlideUpBlurb>
-          ))}
+        
         </MainContent>
         
       </FlexContainer>
@@ -29,22 +29,16 @@ export default function Home({data}) {
   );
 }
 
+
+
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {tag: {regex: "/project/"}}}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          rawMarkdownBody
-          excerpt
+    fileName: file(relativePath: { eq: "img/3822-15.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
   }
 `
-

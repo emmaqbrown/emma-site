@@ -49,11 +49,11 @@
     }
 
     .sidebarStyle{
-      position: relative;
+      position: fixed;
 
     }
     .innerDiv{
-      position: relative;
+      position: fixed;
       border-color: purple;
       border-bottom-style: solid;
       border-width: 2px;

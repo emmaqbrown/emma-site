@@ -18,8 +18,9 @@ export default function Test({data}) {
           <SlideUpBlurb  key={node.id}>
               <h4>{node.frontmatter.title}</h4>
               <p>{node.frontmatter.date}</p>
-              <p>{node.rawMarkdownBody}</p>
-          </SlideUpBlurb>
+              <div dangerouslySetInnerHTML={{ __html: node.html }}
+        />          
+        </SlideUpBlurb>
           ))}
         </MainContent>
         
@@ -38,7 +39,7 @@ export const query = graphql`
             title
             date
           }
-          rawMarkdownBody
+          html
         }
       }
     }
