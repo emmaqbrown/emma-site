@@ -17,9 +17,9 @@ export default function Test({data}) {
           ({ node }) => (
           <SlideUpBlurb  key={node.id}>
               <h4>{node.frontmatter.title}</h4>
-              <p>{node.frontmatter.date}</p>
-              <div dangerouslySetInnerHTML={{ __html: node.html }}
-        />          
+              <div dangerouslySetInnerHTML={{ __html: node.html }}/>
+              <p style={{opacity: 0.3}}>{node.frontmatter.date}</p>
+          
         </SlideUpBlurb>
           ))}
         </MainContent>
