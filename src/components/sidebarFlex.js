@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import styles from "../components/container.module.css"
 import Helmet from "react-helmet"
 
-export default function SidebarFlex()  {
+export default function SidebarFlex({children})  {
     return (
         <StaticQuery
           query={graphql`
@@ -29,6 +29,7 @@ export default function SidebarFlex()  {
                   headerText={data.site.siteMetadata.title}
                   subText={data.site.siteMetadata.description}/>
                   <Nav/>
+                  {children}
               </div>
           </div>
           )}

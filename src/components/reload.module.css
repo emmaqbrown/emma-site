@@ -1,0 +1,17 @@
+button{
+    color: 'blue';
+    border-style: 'none';
+    border-width: 0;
+    font-weight: '200';
+    font-style: 'italic';
+    padding: '5px 15px',
+}
+
+button:active{
+    color: 'white';
+    border-style: 'none';
+    border-width: 0;
+    font-weight: '200';
+    font-style: 'italic';
+    padding: '5px 15px',
+}
