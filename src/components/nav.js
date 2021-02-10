@@ -44,7 +44,6 @@ export default function Nav() {
           <ListLink to="/">Home</ListLink>
           <ListLink to="/about/">About</ListLink>
           <ListLink to="/musings/">Musings</ListLink>
-          <ListLink to="/paper/" >Generate</ListLink>
         </ul>
     </div>
   )
