@@ -1,5 +1,5 @@
 import React from "react"
-import paper, {Path } from "paper"
+import paper, {Path,Point } from "paper"
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -30,17 +30,41 @@ function makeRectangle(){
     return pathRectangle 
 }
 
-function makeCircle(){
+function makeFunkyRect(){
+    var point1 = new Point(Math.round(paper.view.bounds['width']/2+getRandomInt(0,300)), Math.round(paper.view.bounds['height']/2)+getRandomInt(500,900))
+    var point2 = new Point(Math.round(paper.view.bounds['width']/2)+getRandomInt(300,500), Math.round(paper.view.bounds['height']/2)+getRandomInt(0,300))
+    var point3 = new Point(Math.round(paper.view.bounds['width']/2)+getRandomInt(0,300), Math.round(paper.view.bounds['height']/2)-getRandomInt(25,50))
+    var point4 = new Point(Math.round(paper.view.bounds['width']/2)-getRandomInt(300,500), Math.round(paper.view.bounds['height']/2)+getRandomInt(0,300))
     var color = getColor()
-    var radius = getRandomInt(30,300)
-    var centerX = getRandomInt (0,Math.round(paper.view.bounds['width'])-50)
-    var centerY = getRandomInt(0,Math.round(paper.view.bounds['height'])-50)
 
-    var pathCircle = new Path.Circle({
-        radius: radius,
-        center: [centerX,centerY],
-        fillColor: color,
+    var Face = new Path({
+      segments: [point1, point2, point3, point4],
+      closed: true,
+      fillColor: color,
+
     })
+
+    Face.smooth()
+}
+
+function makeFunkyCircle(){
+  var color = getColor()
+
+    var Face = new Path({
+      segments: [
+        new Point(Math.round(paper.view.bounds['width']/2), Math.round(paper.view.bounds['height']/2)+getRandomInt(100,300)), 
+        new Point(Math.round(paper.view.bounds['width']/2)+getRandomInt(100,300), Math.round(paper.view.bounds['height']/2)),
+        new Point(Math.round(paper.view.bounds['width']/2), Math.round(paper.view.bounds['height']/2)-getRandomInt(100,300)),
+        new Point(Math.round(paper.view.bounds['width']/2)-getRandomInt(100,300), Math.round(paper.view.bounds['height']/2))
+      ],
+      // strokeColor: 'black',
+      closed: true,
+      fillColor: color,
+
+    })
+
+    
+    Face.smooth()
 }
 
 class Generate extends React.Component {
@@ -49,13 +73,16 @@ class Generate extends React.Component {
     paper.setup(this.canvas)
     paper.tools.forEach(tool => tool.remove())
 
-    var pathRectangle = makeRectangle()
-    makeCircle()
-    paper.view.onFrame = () => {
-       	// pathRectangle.size += 1;
-        pathRectangle.rotate(1);
-        pathRectangle.fillColor.hue += 1
-    }
+    // var pathRectangle = makeRectangle()
+    makeFunkyRect()
+    makeFunkyCircle()
+    // pathRectangle.rotate(getRandomInt(1,100));
+    // pathRectangle.fillColor(getColor())
+    // paper.view.onFrame = () => {
+    //    	// pathRectangle.size += 1;
+    //     pathRectangle.rotate(1);
+    //     pathRectangle.fillColor(getColor())
+    // }
 
 
     console.log(paper.view.bounds)
