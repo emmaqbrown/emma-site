@@ -14,11 +14,11 @@ function getColor(){
 
 function makeRectangle(){
     var color = getColor()
-    var sizeX = getRandomInt(50,300)
-    var sizeY = getRandomInt(50,300)
+    var sizeX = getRandomInt(50,500)
+    var sizeY = getRandomInt(50,500)
 
-    var pointX = getRandomInt(0,500)
-    var pointY = getRandomInt(0,500)
+    var pointX = getRandomInt(0,Math.round(paper.view.bounds['width'])-50)
+    var pointY = getRandomInt(0,Math.round(paper.view.bounds['height'])-50)
 
     var pathRectangle = new Path.Rectangle({
         point: [pointX,pointY],
@@ -26,13 +26,15 @@ function makeRectangle(){
         // strokeColor: 'purple',
         fillColor: color,
     })
+    console.log(pathRectangle.position)
+    return pathRectangle 
 }
 
 function makeCircle(){
     var color = getColor()
-    var radius = getRandomInt(30,100)
-    var centerX = getRandomInt(0,500)
-    var centerY = getRandomInt(0,500)
+    var radius = getRandomInt(30,300)
+    var centerX = getRandomInt (0,Math.round(paper.view.bounds['width'])-50)
+    var centerY = getRandomInt(0,Math.round(paper.view.bounds['height'])-50)
 
     var pathCircle = new Path.Circle({
         radius: radius,
@@ -47,13 +49,18 @@ class Generate extends React.Component {
     paper.setup(this.canvas)
     paper.tools.forEach(tool => tool.remove())
 
-    makeRectangle()
+    var pathRectangle = makeRectangle()
     makeCircle()
-    // paper.view.onFrame = () => {
-    //    	// pathRectangle.size += 1;
-    //     pathRectangle.rotate(1);
-    // }
-  
+    paper.view.onFrame = () => {
+       	// pathRectangle.size += 1;
+        pathRectangle.rotate(1);
+        pathRectangle.fillColor.hue += 1
+    }
+
+
+    console.log(paper.view.bounds)
+    console.log(Math.round((paper.view.bounds['width'])))
+
   }
 
   render () {
